@@ -1,23 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../assets/logo.svg';
+import FilterNavigate from '../FilterNavigate/FilterNavigate';
+import AviasalesTickets from '../AviasalesTickets/AviasalesTickets';
+
+import styleApp from './App.module.scss';
 
 function App() {
-  var a = 72;
-  console.log(a);
-  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section className={styleApp.main}>
+        <img className={styleApp.logo} src={logo} alt="Логотип Aviasales" />
+
+        <div className={styleApp.containerContetn}>
+          <FilterNavigate />
+          <AviasalesTickets />
+        </div>
+      </section>
+    </>
   );
 }
 

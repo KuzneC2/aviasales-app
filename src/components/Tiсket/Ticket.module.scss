@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 520px;
+  width: 100%;
+  background-color: #fff;
+  margin: 0  0 20px 0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 3px 8px 0 #97979740;
+  max-height: 184px;
+ 
+}
+
+.titleInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  max-height: 36px;
+}
+
+.logo {
+  width: 110px;
+  height: 36px;
+}
+
+.price {
+  margin: 0;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  align-items: center;
+
+  color: #2196f3;
+}
+
+.airInfo {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.infoBox {
+  margin: 0;
+  width: (502/3) * 100%/502;
+  box-sizing: border-box;
+  padding: 0 20px 0 20px;
+  &:nth-child(2) {
+    padding: 0;
+  }
+  @media (max-width:520px) {
+    padding: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #a0b0b9;
+
+  @media (max-width:520px) {
+    font-size: 8px;
+  }
+}
+.description {
+  margin: 0;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  align-items: center;
+
+  color: #4a4a4a;
+  padding-bottom: 10px;
+  &:nth-of-type(2n) {
+    padding-bottom: 0;
+  }
+  @media (max-width:520px) {
+    font-size: 8px;
+  }
+}

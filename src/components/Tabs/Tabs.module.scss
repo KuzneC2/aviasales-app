@@ -1,0 +1,61 @@
+@import url(../../fonts/style.sheet.scss);
+.tabBar {
+  max-width: 502px;
+  width: 100%;
+  display: flex;
+  margin: 0 0 20px 0;
+  @media (max-width: 768px) {
+    margin: 0 auto 20px;
+  }
+  @media (max-width: 520px) {
+    max-width: 320px;
+  }
+}
+
+.tabButton {
+  padding: 15px;
+  box-sizing: border-box;
+  width: 168px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  border: 1px solid #dfe5ec;
+
+  &:nth-child(1) {
+    border-radius: 6px 0 0 6px;
+  }
+  &:nth-child(3) {
+    border-radius: 0 6px 6px 0;
+  }
+  &:hover {
+    background-color: #f1fcff;
+    cursor:
+      url(../../assets/Cursor.svg) 2 2,
+      default;
+  }
+  @media (max-width: 520px) {
+    font-size: 8px;
+    width: 105px;
+    letter-spacing: 0;
+    line-height: 16px;
+    padding: 10px 5px;
+  }
+}
+
+.active {
+  color: #fff;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
+  &:hover {
+    color: #4a4a4a;
+  }
+}

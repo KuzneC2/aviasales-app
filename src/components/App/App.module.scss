@@ -1,0 +1,27 @@
+@import url(../../fonts/style.sheet.scss);
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  padding-bottom: 50px;
+}
+
+.containerContetn {
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 90%;
+    }
+}
+
+
+

@@ -1,0 +1,77 @@
+.containerFilter {
+  width: 232px;
+  max-height: 252px;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 0 20px 0 0;
+  box-shadow: 0 0 2px 2px #0000000f;
+  border-radius: 5px;
+  padding-bottom: 20px;
+
+  
+  @media (max-width: 768px) {
+    width: 85%;
+    margin: 0 auto 20px;
+  }
+  @media (max-width: 520px) {
+    width: 80%;
+  }
+}
+
+.title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 20px 20px 10px 20px;
+  margin: 0;
+  color: #4a4a4a;
+}
+
+.filterItem {
+  display: flex;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding: 10px 0 10px 20px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  align-items: center;
+
+  color: #4a4a4a;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: #f1fcff;
+    cursor:
+      url(../../assets/Cursor.svg) 2 2,
+      default;
+  }
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.customCheckbox {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9abbce;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+input[type='checkbox']:checked + .customCheckbox {
+  background-image: url(../../assets/Shape.svg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-color: #2196f3;
+}
