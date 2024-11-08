@@ -5,15 +5,22 @@ import AviasalesTickets from '../AviasalesTickets/AviasalesTickets';
 
 import styleApp from './App.module.scss';
 
-function App() {
+function App({stateData, toggleAll, toggleCheck, toggleSort}) {
   return (
     <>
       <section className={styleApp.main}>
         <img className={styleApp.logo} src={logo} alt="Логотип Aviasales" />
 
         <div className={styleApp.containerContetn}>
-          <FilterNavigate />
-          <AviasalesTickets />
+          <FilterNavigate
+            stateData={stateData}
+            toggleAll={toggleAll}
+            toggleCheck={toggleCheck}
+          />
+          <AviasalesTickets
+          stateData={stateData}
+          toggleSort={toggleSort}
+          />
         </div>
       </section>
     </>
