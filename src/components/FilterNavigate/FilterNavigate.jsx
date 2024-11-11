@@ -1,6 +1,8 @@
 import React from 'react';
-
 import styleFilter from './FilterNavigate.module.scss';
+
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 const FilterNavigate = ({ stateData, toggleAll, toggleCheck }) => {
   return (
@@ -64,5 +66,18 @@ const FilterNavigate = ({ stateData, toggleAll, toggleCheck }) => {
     </>
   );
 };
+const mapStateToProps = (state) => {
+  return {
+    stateData: state.reducerTickets,
+  };
+};
 
-export default FilterNavigate;
+// const mapDispatchToProps = (dispatch) => {
+//   const {toggleAll, toggleCheck} = bindActionCreators(actions, dispatch)
+//   return {
+//     toggleAll,
+//     toggleCheck,
+//   };
+// };
+
+export default connect(mapStateToProps, actions)(FilterNavigate);

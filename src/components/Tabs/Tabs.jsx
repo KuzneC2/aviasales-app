@@ -2,6 +2,9 @@ import React from 'react';
 
 import styleTabs from './Tabs.module.scss';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 const Tabs = ({ stateData, toggleSort }) => {
   const lowPriceTicket =
     stateData.sortTicket == 'price'
@@ -19,7 +22,6 @@ const Tabs = ({ stateData, toggleSort }) => {
       : styleTabs.tabButton;
 
   const handleTab = (payload) => {
-    console.log(toggleSort(payload));
     toggleSort(payload);
   };
   return (
@@ -39,4 +41,10 @@ const Tabs = ({ stateData, toggleSort }) => {
   );
 };
 
-export default Tabs;
+const mapStateToProps = (state) => {
+  return {
+    stateData: state.reducerTickets,
+  };
+};
+
+export default connect(mapStateToProps, actions)(Tabs);

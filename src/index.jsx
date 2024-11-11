@@ -3,35 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './components/App/App';
 
-import { createStore, bindActionCreators } from 'redux';
-import reducer from './reducer';
-import * as actions from './actions';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
-const { dispatch } = store;
+import { thunk } from 'redux-thunk';
+import rootReduser from './redusers/rootReduser';
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+    : compose;
 
-
-const { toggleAll, toggleCheck, toggleSort } = bindActionCreators(actions, dispatch);
-
+const store = createStore(
+  rootReduser,
+  composeEnhancers(applyMiddleware(thunk)),
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const update = () => {
-
-  root.render(
-    <React.StrictMode>
-      <App
-        stateData={store.getState()}
-        toggleAll={toggleAll}
-        toggleCheck={toggleCheck}
-        toggleSort={toggleSort}
-      />
-    </React.StrictMode>,
-  );
-};
-update()
-
-store.subscribe(update)
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+);

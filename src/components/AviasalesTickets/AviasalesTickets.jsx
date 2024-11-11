@@ -5,11 +5,11 @@ import Tabs from '../Tabs/Tabs';
 import TicketList from '../TicketList/TicketList';
 import ButtonMore from '../ButtonMore/ButtonMore';
 
-const AviasalesTickets = ({ stateData, toggleSort }) => {
+const AviasalesTickets = () => {
   return (
     <>
       <div className={styleAvia.ticketList}>
-        <Tabs toggleSort={toggleSort} stateData={stateData}/>
+        <Tabs />
         <TicketList />
         <ButtonMore />
       </div>

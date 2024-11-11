@@ -4,10 +4,13 @@ const initialState = {
   checkOne: false,
   checkTwo: false,
   checkThree: false,
-  sortTicket: 'price',
+  sortTicket: ['price'],
+  tickets: [],
+  error: false,
+  stop: false,
 };
 
-const reducer = (state = initialState, action) => {
+const reducerTickets = (state = initialState, action) => {
   const allFalse = {
     ...state,
     checkAll: false,
@@ -69,11 +72,29 @@ const reducer = (state = initialState, action) => {
         return { ...state, sortTicket: [action.payload] };
       }
       if ([action.payload] == 'option') {
-        return { ...state, sortTicket:[action.payload] };
+        return { ...state, sortTicket: [action.payload] };
       }
+
+    case 'SUCCESS_FETCH_TICKETS':
+      return {
+        ...state,
+        tickets: [...state.tickets, ...action.payload.tickets],
+        error: false,
+      };
+
+    case 'STOP_SUCCES_FETCH_TICKETS':
+      return {
+        ...state,
+        stop: true,
+        tickets: [...state.tickets, ...action.payload.tickets],
+      };
+
+    case 'ERROR_FETCH_TICKETS':
+      return { ...state, error: true };
+
     default:
       return state;
   }
 };
 
-export default reducer;
+export default reducerTickets;
