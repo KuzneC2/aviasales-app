@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/aviasales-app/static/css/main.f4dc96a8.css",
-    "main.js": "/aviasales-app/static/js/main.d07002bd.js",
+    "main.css": "/aviasales-app/static/css/main.29f55a45.css",
+    "main.js": "/aviasales-app/static/js/main.80e078b8.js",
     "static/media/OpenSans-Regular.woff": "/aviasales-app/static/media/OpenSans-Regular.0a619b3527c4b793b5ed.woff",
     "static/media/OpenSans-SemiBold.woff": "/aviasales-app/static/media/OpenSans-SemiBold.8177e7e12a4aa0fa682b.woff",
     "static/media/OpenSans-Regular.woff2": "/aviasales-app/static/media/OpenSans-Regular.14f53f057e15f693da16.woff2",
     "static/media/OpenSans-SemiBold.woff2": "/aviasales-app/static/media/OpenSans-SemiBold.91ea29e0dba6cfb14a42.woff2",
     "static/media/Cursor.svg": "/aviasales-app/static/media/Cursor.11f281b3120ca1b4527f.svg",
     "static/media/logo.svg": "/aviasales-app/static/media/logo.ae88d69ce81169cd36b7947870b4e921.svg",
-    "static/media/S7 Logo.svg": "/aviasales-app/static/media/S7 Logo.e11eae92c4e808d911a822b176b516ac.svg",
     "index.html": "/aviasales-app/index.html",
     "static/media/Shape.svg": "/aviasales-app/static/media/Shape.68eaed38c8165bae30a5.svg",
-    "main.f4dc96a8.css.map": "/aviasales-app/static/css/main.f4dc96a8.css.map",
-    "main.d07002bd.js.map": "/aviasales-app/static/js/main.d07002bd.js.map"
+    "main.29f55a45.css.map": "/aviasales-app/static/css/main.29f55a45.css.map",
+    "main.80e078b8.js.map": "/aviasales-app/static/js/main.80e078b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4dc96a8.css",
-    "static/js/main.d07002bd.js"
+    "static/css/main.29f55a45.css",
+    "static/js/main.80e078b8.js"
   ]
 }
