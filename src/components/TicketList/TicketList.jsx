@@ -64,6 +64,8 @@ const TicketList = ({ data, getAllTickets }) => {
           a.segments[1].duration -
           (b.segments[0].duration + b.segments[1].duration)
         );
+      } else if(data.sortTicket[0]==='option'){
+        return b.price - a.price
       }
     });
 
