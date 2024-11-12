@@ -26,25 +26,6 @@ export const fetchSearchId = () => {
   };
 };
 
-// получение пачки билетов
-// export const fetchTickets = (searchId) => {
-//   return async (dispatch) => {
-//     try {
-//       const res = await fetch(`${ticketsApi}?searchId=${searchId}`).then(
-//         (res) => res.json(),
-//       );
-//       console.log(res.stop);
-//       if (res.stop == false) {
-//         dispatch({ type: 'SUCCESS_FETCH_TICKETS', payload: res });
-//       } else if (res.stop == true) {
-//         dispatch({ type: 'STOP_SUCCES_FETCH_TICKETS', payload: res });
-//       }
-//     } catch (err) {
-//       dispatch({ type: 'ERROR_FETCH_TICKETS', payload: err.message });
-//     }
-//   };
-// };
-
 // получение всех всех билетов
 export const getAllTickets = () => {
   return async (dispatch) => {

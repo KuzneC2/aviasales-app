@@ -23,6 +23,7 @@ const Tabs = ({ stateData, toggleSort }) => {
 
   const handleTab = (payload) => {
     toggleSort(payload);
+    console.log(stateData.sortTicket)
   };
   return (
     <>
