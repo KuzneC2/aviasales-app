@@ -8,6 +8,7 @@ const initialState = {
   tickets: [],
   error: false,
   stop: false,
+  ticketsLength: 5,
 };
 
 const reducerTickets = (state = initialState, action) => {
@@ -66,13 +67,13 @@ const reducerTickets = (state = initialState, action) => {
 
     case 'TOGGLE_SORT':
       if ([action.payload] == 'price') {
-        return { ...state, sortTicket: [action.payload] };
+        return { ...state, sortTicket: [action.payload], ticketsLength: 5 };
       }
       if ([action.payload] == 'fast') {
-        return { ...state, sortTicket: [action.payload] };
+        return { ...state, sortTicket: [action.payload], ticketsLength: 5 };
       }
       if ([action.payload] == 'option') {
-        return { ...state, sortTicket: [action.payload] };
+        return { ...state, sortTicket: [action.payload], ticketsLength: 5 };
       }
 
     case 'SUCCESS_FETCH_TICKETS':
@@ -82,16 +83,18 @@ const reducerTickets = (state = initialState, action) => {
         error: false,
       };
 
-    case 'STOP_SUCCES_FETCH_TICKETS':
+    case 'STOP_SUCCESS_FETCH_TICKETS':
       return {
         ...state,
-        stop: true,
+        stop: action.payload.stop,
         tickets: [...state.tickets, ...action.payload.tickets],
       };
 
     case 'ERROR_FETCH_TICKETS':
       return { ...state, error: true };
 
+    case 'GET_MORE_TICKETS':
+      return { ...state, ticketsLength: state.ticketsLength + 5 };
     default:
       return state;
   }

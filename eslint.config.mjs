@@ -1,6 +1,6 @@
 import globals from 'globals';
 import js from '@eslint/js';
-import eslintReact, { rules } from 'eslint-plugin-react';
+import eslintReact from 'eslint-plugin-react';
 
 import eslintReactHooks from 'eslint-plugin-react-hooks';
 import eslintReactRefresh from 'eslint-plugin-react-refresh';
@@ -12,7 +12,6 @@ import eslintConfigAlly from 'eslint-plugin-jsx-a11y';
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
-  
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
     rules: {

@@ -70,14 +70,6 @@ const mapStateToProps = (state) => {
   return {
     stateData: state.reducerTickets,
   };
-};
-
-// const mapDispatchToProps = (dispatch) => {
-//   const {toggleAll, toggleCheck} = bindActionCreators(actions, dispatch)
-//   return {
-//     toggleAll,
-//     toggleCheck,
-//   };
-// };
+}; 
 
 export default connect(mapStateToProps, actions)(FilterNavigate);

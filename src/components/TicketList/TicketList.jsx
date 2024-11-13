@@ -9,23 +9,8 @@ const TicketList = ({ data, getAllTickets }) => {
     getAllTickets();
   }, []);
 
-  const ticketsArr =
-    data.sortTicket[0] === 'price'
-      ? data.tickets.sort((a, b) => {
-          return a.price - b.price;
-        })
-      : data.sortTicket[0] === 'fast'
-        ? data.tickets.sort((a, b) => {
-            return (
-              a.segments[0].duration +
-              a.segments[1].duration -
-              (b.segments[0].duration + b.segments[1].duration)
-            );
-          })
-        : [];
-
   const filterTicketsArr = (array) => {
-    let filteredArray = array.filter((ticket) => {
+    const filteredArray = array.filter((ticket) => {
       if (data.checkAll) {
         return true;
       }
@@ -64,27 +49,33 @@ const TicketList = ({ data, getAllTickets }) => {
           a.segments[1].duration -
           (b.segments[0].duration + b.segments[1].duration)
         );
-      } else if(data.sortTicket[0]==='option'){
-        return b.price - a.price
+      } else if (data.sortTicket[0] === 'option') {
+        return b.price - a.price;
       }
     });
 
-    console.log(filteredArray);
     return filteredArray;
   };
 
+  const nullSearch = <p className={styleTicketList.nullSearch}>Рейсов, подходящих под заданные фильтры, не найдено</p>;
+
+  const resultSearch =
+    filterTicketsArr(data.tickets).length === 0
+      ? nullSearch
+      : filterTicketsArr(data.tickets)
+          .slice(0, data.ticketsLength)
+          .map((ticket, index) => (
+            <Ticket
+              key={index}
+              price={ticket.price}
+              carrier={ticket.carrier}
+              segments={ticket.segments}
+            />
+          ));
+
   return (
     <div className={styleTicketList.ticketList}>
-      {filterTicketsArr(data.tickets)
-        .slice(0, 5)
-        .map((ticket, index) => (
-          <Ticket
-            key={index}
-            price={ticket.price}
-            carrier={ticket.carrier}
-            segments={ticket.segments}
-          />
-        ))}
+      {resultSearch}
     </div>
   );
 };

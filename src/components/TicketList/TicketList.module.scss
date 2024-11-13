@@ -1,9 +1,25 @@
 .ticketList {
-  //   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (max-width: 768px) {
     width: 90%;
   }
+}
+
+.nullSearch {
+  margin: 0;
+  padding: 10px 0 10px 0;
+  text-align: center;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  align-items: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #4a4a4a;
 }

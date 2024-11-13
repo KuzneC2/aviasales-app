@@ -10,7 +10,7 @@
 .logo {
   width: 60px;
   height: 60px;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
 }
 
 .containerContetn {
@@ -21,6 +21,11 @@
       flex-direction: column;
       width: 90%;
     }
+    padding-top: 25px;
+}
+
+.loader{
+  padding-bottom: 25px;
 }
 
 

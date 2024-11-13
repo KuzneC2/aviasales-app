@@ -10,6 +10,10 @@ export const toggleSort = (payload) => ({
   payload: payload,
 });
 
+export const getMoreTickets = () => ({
+  type: 'GET_MORE_TICKETS'
+})
+
 const ticketsApi = 'https://aviasales-test-api.kata.academy/tickets';
 const searchIdApi = 'https://aviasales-test-api.kata.academy/search';
 
@@ -35,7 +39,6 @@ export const getAllTickets = () => {
 
       while (!indicate) {
         try {
-          // console.log(search.searchId);
           const res = await fetch(
             `${ticketsApi}?searchId=${search.searchId}`,
           ).then((res) => res.json());
@@ -46,7 +49,6 @@ export const getAllTickets = () => {
             dispatch({ type: 'STOP_SUCCESS_FETCH_TICKETS', payload: res });
           }
         } catch (err) {
-          console.log(err);
           continue;
         }
       }

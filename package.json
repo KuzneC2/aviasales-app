@@ -20,6 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint . --report-unused-disable-directives",
+    "lint:fix": "eslint . --report-unused-disable-directives --fix --color",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"
   },

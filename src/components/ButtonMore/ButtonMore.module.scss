@@ -15,4 +15,10 @@
   width: 100%;
   padding: 15px auto;
   height: 50px;
+  &:hover{
+    opacity: 0.7;
+    cursor:
+      url(../../assets/Cursor.svg) 2 2,
+      default;
+  }
 }
