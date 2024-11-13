@@ -19,6 +19,7 @@ export default [
       'prefer-const': 'error',
       'react/jsx-uses-react': 'error',
       'react/jsx-uses-vars': 'error',
+      'no-fallthrough': 'off',
     },
   },
   { languageOptions: { globals: globals.browser } },

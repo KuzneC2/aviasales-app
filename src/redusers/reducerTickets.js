@@ -10,7 +10,6 @@ const initialState = {
   stop: false,
   ticketsLength: 5,
 };
-
 const reducerTickets = (state = initialState, action) => {
   const allFalse = {
     ...state,
@@ -75,7 +74,7 @@ const reducerTickets = (state = initialState, action) => {
       if ([action.payload] == 'option') {
         return { ...state, sortTicket: [action.payload], ticketsLength: 5 };
       }
-
+      break;
     case 'SUCCESS_FETCH_TICKETS':
       return {
         ...state,
