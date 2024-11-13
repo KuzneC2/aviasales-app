@@ -45,7 +45,7 @@ const Ticket = ({ price, carrier, segments }) => {
     <>
       <div className={styleTicket.container}>
         <div className={styleTicket.titleInfo}>
-          <h3 className={styleTicket.price}>{price}</h3>
+          <h3 className={styleTicket.price}>{price.toLocaleString()}</h3>
           <img
             className={styleTicket.logo}
             src={`https://pics.avs.io/99/36/${carrier}.png`}
